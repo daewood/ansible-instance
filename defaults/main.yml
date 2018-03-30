@@ -1,0 +1,27 @@
+---
+# Delete instance
+DELETE_OS_INSTANCE: false
+
+# Necessary OpenStack variables
+ansible_connection: local
+openstack_auth_url: "https://example.com:5000/v2.0"
+openstack_availability_zone: nova
+openstack_nic_ids: xxxxxxx-xxxxxxxxxx-xxxxxxxxx 
+openstack_image_id: xxxxxxx-xxxxxxxxx-xxxxxxxxx 
+openstack_key_pair: openstack
+openstack_attach_fip: false
+openstack_fip_network: "fip-01"
+openstack_fip_timeout: 60
+
+openstack_domain: example.com
+openstack_dns_servers:
+    - 8.8.8.8
+
+# Authentication variables
+openstack_username: username
+openstack_password: password
+openstack_project: project_name
+
+# Static FIP address?
+openstack_use_static_floating_ip_address: false
+openstack_floating_ip_address: "{{ floating_ips }}"

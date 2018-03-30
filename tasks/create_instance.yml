@@ -1,0 +1,21 @@
+- name: launch an instance on OpenStack
+  os_server:
+    state: present
+    auth:
+      auth_url: "{{ openstack_auth_url }}"
+      username: "{{ openstack_username }}"
+      password: "{{ openstack_password }}"
+      project_name: "{{ openstack_project }}"
+    name: "{{ inventory_hostname }}"
+    #region_name: "{{ openstack_region }}"
+    availability_zone: "{{ openstack_availability_zone }}"
+    image: "{{ openstack_image_id }}"
+    key_name: "{{ openstack_key_pair }}"
+    timeout: 200
+    flavor: "{{ openstack_flavor }}"
+    security_groups: default
+    meta: 
+      hostname: "{{ inventory_hostname }}"
+    nics:
+      - net-id: "{{ openstack_nic_ids }}"
+    auto_ip: no

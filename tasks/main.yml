@@ -1,0 +1,10 @@
+---
+- import_tasks: create_instance.yml
+  when: not DELETE_OS_INSTANCE
+
+- import_tasks: attach_fip.yml
+  when: openstack_attach_fip and (not DELETE_OS_INSTANCE)
+
+- import_tasks: delete_instance.yml
+  when:  DELETE_OS_INSTANCE
+
