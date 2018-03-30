@@ -7,7 +7,7 @@
       password: "{{ openstack_password }}"
       project_name: "{{ openstack_project }}"
       domain_name: "{{ openstack_domain | default('default') }}"
-    name: "{{ inventory_hostname }}"
+    name: "{{ item }}"
     region_name: "{{ openstack_region | default('RegionOne') }}"
     availability_zone: "{{ openstack_availability_zone | default('nova') }}"
     delete_fip: yes

@@ -7,16 +7,15 @@
       password: "{{ openstack_password }}"
       project_name: "{{ openstack_project }}"
       domain_name: "{{ openstack_domain | default('default') }}"
-    name: "{{ inventory_hostname }}"
+    name: "{{ item }}"
     region_name: "{{ openstack_region | default('RegionOne') }}"
     availability_zone: "{{ openstack_availability_zone | default('nova') }}"
     image: "{{ openstack_image_id }}"
     key_name: "{{ openstack_key_pair }}"
     timeout: 200
     flavor: "{{ openstack_flavor }}"
-    #auto_ip: "{{ openstack_attach_fip | default('no') }}"
     security_groups: "{{ openstack_security_groups | default('default') }}"
     meta: 
-      hostname: "{{ inventory_hostname }}"
+      hostname: "{{ item }}"
     nics:
       - net-id: "{{ openstack_nic_ids }}"

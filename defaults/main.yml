@@ -3,12 +3,10 @@
 DELETE_OS_INSTANCE: false
 
 # Necessary OpenStack variables
-ansible_connection: local
 openstack_auth_url: "https://localhost:5000/v3"
 #openstack_availability_zone: nova
-openstack_nic_ids: private 
-openstack_image_id: cirros 
-#openstack_key_pair: openstack
+openstack_nic_ids: private#should be nic id 
+openstack_image_id: cirros
 
 openstack_attach_fip: false
 openstack_fip_network: "public"

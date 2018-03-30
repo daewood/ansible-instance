@@ -1,4 +1,4 @@
-- name: attach floating IP
+- name: attach floating IP with static ip address
   os_floating_ip:
     auth:
       auth_url: "{{ openstack_auth_url }}"
@@ -6,7 +6,7 @@
       password: "{{ openstack_password }}"
       project_name: "{{ openstack_project }}"
       domain_name: "{{ openstack_domain | default('default') }}"
-    server: "{{ inventory_hostname }}"
+    server: "{{ item }}"
     state: present
     reuse: yes
     wait: true
@@ -23,7 +23,7 @@
       password: "{{ openstack_password }}"
       project_name: "{{ openstack_project }}"
       domain_name: "{{ openstack_domain | default('default') }}"
-    server: "{{ inventory_hostname }}"
+    server: "{{ item }}"
     state: present
     reuse: yes
     wait: true

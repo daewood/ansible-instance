@@ -1,9 +1,12 @@
 ---
-- import_tasks: create_instance.yml
+- include_tasks: create_instance.yml
+  with_items: "{{inventory_hostname}}"
   when: not DELETE_OS_INSTANCE
 
-- import_tasks: attach_fip.yml
+- include_tasks: attach_fip.yml
+  with_items: "{{inventory_hostname}}"
   when: openstack_attach_fip and (not DELETE_OS_INSTANCE)
 
-- import_tasks: delete_instance.yml
+- include_tasks: delete_instance.yml
+  with_items: "{{inventory_hostname}}"
   when:  DELETE_OS_INSTANCE
