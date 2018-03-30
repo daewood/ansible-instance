@@ -7,4 +7,3 @@
 
 - import_tasks: delete_instance.yml
   when:  DELETE_OS_INSTANCE
-
