@@ -7,5 +7,5 @@
       password: "{{ openstack_password }}"
       project_name: "{{ openstack_project }}"
     name: "{{ inventory_hostname }}"
-    #region_name: "{{ openstack_region }}"
+    region_name: "{{ openstack_region }}"
     availability_zone: "{{ openstack_availability_zone }}"
