@@ -10,3 +10,4 @@
     name: "{{ inventory_hostname }}"
     region_name: "{{ openstack_region | default('RegionOne') }}"
     availability_zone: "{{ openstack_availability_zone | default('nova') }}"
+    delete_fip: yes

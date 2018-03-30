@@ -5,6 +5,7 @@
       username: "{{ openstack_username }}"
       password: "{{ openstack_password }}"
       project_name: "{{ openstack_project }}"
+      domain_name: "{{ openstack_domain | default('default') }}"
     server: "{{ inventory_hostname }}"
     state: present
     reuse: yes
@@ -21,6 +22,7 @@
       username: "{{ openstack_username }}"
       password: "{{ openstack_password }}"
       project_name: "{{ openstack_project }}"
+      domain_name: "{{ openstack_domain | default('default') }}"
     server: "{{ inventory_hostname }}"
     state: present
     reuse: yes

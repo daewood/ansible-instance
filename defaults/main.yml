@@ -10,9 +10,9 @@ openstack_nic_ids: private
 openstack_image_id: cirros 
 #openstack_key_pair: openstack
 
-#openstack_attach_fip: false
-#openstack_fip_network: "fip-01"
-#openstack_fip_timeout: 60
+openstack_attach_fip: false
+openstack_fip_network: "public"
+openstack_fip_timeout: 60
 
 # Authentication variables
 openstack_username: demo
@@ -21,4 +21,4 @@ openstack_project: demo
 
 # Static FIP address?
 openstack_use_static_floating_ip_address: false
-#openstack_floating_ip_address: "{{ floating_ips }}"
+openstack_floating_ip_address: "{{ floating_ips }}"
